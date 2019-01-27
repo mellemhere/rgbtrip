@@ -1,0 +1,27 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>
+      Manual
+    </ion-title>
+    <ion-buttons slot="primary">
+      Ligar/Desligar <ion-toggle color="secondary"></ion-toggle>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <div class="background" padding="" [ngStyle]="backgroundStyle" >
+    <div id="color-picker-container"></div>
+
+    <div class="button-tray">
+      <p>Cores rápidas</p>
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide *ngFor="let color of hotColors">
+          <div class="color" [ngStyle]="{'background-color': color}" (click)="changeColor(color)">
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+  </div>
+</ion-content>
